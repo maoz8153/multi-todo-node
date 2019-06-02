@@ -41,7 +41,7 @@ export class TaskController {
 
     public async deleteTask(request: Request, responce: Response) {
         try {
-            await this.taskMongoRemoteService.deleteTask(request.params.taskId);
+            await this.taskMongoRemoteService.deleteTask(request.params.tasksId);
             responce.status(200).send({ deleted: true });
         } catch (error) {
             responce.status(500).send(error);
